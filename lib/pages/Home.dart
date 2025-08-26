@@ -38,7 +38,6 @@ class Home extends StatelessWidget {
               const SizedBox(height: 30),
               const JokeHeader(),
               const SizedBox(height: 15),
-              // category dropdown
               JokeCategorySelector(controller:controller),
               const SizedBox(height: 10),
               const JokeInstruction(),

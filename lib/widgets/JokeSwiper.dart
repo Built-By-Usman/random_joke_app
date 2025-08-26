@@ -14,24 +14,26 @@ class JokeSwiper extends StatelessWidget {
     return Flexible(
       child: Obx(
             () => controller.jokes.isEmpty
-            ? Center(child: Lottie.asset('assets/lottie/loading.json'))
-            : SizedBox(
-          width: 450,
-          height: 420,
-          child: CardSwiper(
-            numberOfCardsDisplayed:
-            controller.jokes.length < 2 ? controller.jokes.length : 2,
-            cardsCount: controller.jokes.length,
-            cardBuilder: (
-                context,
-                index,
-                percentThresholdX,
-                percentThresholdY,
-                ) {
-              return TinderCard(joke: controller.jokes[index]);
-            },
-          ),
-        ),
+            ? Center(child: Lottie.asset('assets/lottie/loading.json',width: 200,height: 200))
+            : Center(
+              child: SizedBox(
+                        width: 450,
+                        height: 420,
+                        child: CardSwiper(
+              numberOfCardsDisplayed:
+              controller.jokes.length < 2 ? controller.jokes.length : 2,
+              cardsCount: controller.jokes.length,
+              cardBuilder: (
+                  context,
+                  index,
+                  percentThresholdX,
+                  percentThresholdY,
+                  ) {
+                return TinderCard(joke: controller.jokes[index]);
+              },
+                        ),
+                      ),
+            ),
       ),
     );
   }
